@@ -85,44 +85,45 @@ function Dashboard() {
         </div>
       </section>
       <section className="relative w-full h-100 flex items-center justify-center">
-        <Doughnut
-          data={{
-            labels: [
-              "Total Period Balance",
-              "Total Period Expenses",
-              "Total Period Income",
-            ],
-            datasets: [
-              {
-                label: "Period Overview",
-                data: [totalBalance, totalExpenses, totalIncome],
-                backgroundColor: [
-                  "rgba(75, 192, 192, 0.6)",
-                  "rgba(255, 99, 132, 0.6)",
-                  "rgba(54, 162, 235, 0.6)",
-                ],
-                borderColor: [
-                  "rgba(75, 192, 192, 1)",
-                  "rgba(255, 99, 132, 1)",
-                  "rgba(54, 162, 235, 1)",
-                ],
-                borderWidth: 1,
+          <Doughnut
+            data={{
+              labels: [
+                "Total Period Balance",
+                "Total Period Expenses",
+                "Total Period Income",
+              ],
+              datasets: [
+                {
+                  label: "Period Overview",
+                  data: [totalBalance, totalExpenses, totalIncome],
+                  backgroundColor: [
+                    "rgba(75, 192, 192, 0.6)",
+                    "rgba(255, 99, 132, 0.6)",
+                    "rgba(54, 162, 235, 0.6)",
+                  ],
+                  borderColor: [
+                    "rgba(75, 192, 192, 1)",
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            }}
+            options={{
+              maintainAspectRatio: false,
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: "bottom",
+                },
+                title: {
+                  display: true,
+                  text: "Period Financial Breakdown",
+                },
               },
-            ],
-          }}
-          options={{
-            responsive: true,
-            plugins: {
-              legend: {
-                position: "bottom",
-              },
-              title: {
-                display: true,
-                text: "Period Financial Breakdown",
-              },
-            },
-          }}
-        />
+            }}
+          />
       </section>
     </section>
   );

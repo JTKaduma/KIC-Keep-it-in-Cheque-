@@ -56,7 +56,7 @@ function Budgets() {
       const matchedTxn = txn.filter((t) => {
         const txnDate = new Date(t.date);
         const startDate = new Date(budget.startDate);
-        const endDate = new Date(startDate);
+        let endDate = new Date(startDate);
         switch (budget.recurrence) {
           case "yearly":
             endDate.setFullYear(startDate.getFullYear() + 1);
