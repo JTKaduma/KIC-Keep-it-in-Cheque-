@@ -6,7 +6,7 @@ import Budgets from "./Budgets.jsx";
 function MainPage(props) {
   return (
     <>
-      <main className="w-full h-full bg-white py-5 overflow-y-auto">
+      <main className="w-[90%] h-screen lg:w-4/5 bg-white py-5 overflow-y-auto">
         <div className="w-full flex">
           <div className="w-full">
             {props.activeTab === "Dashboard" && <Dashboard />}

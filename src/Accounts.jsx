@@ -28,8 +28,6 @@ function Accounts() {
 
     localStorage.setItem("txn", JSON.stringify(dataArray));
 
-    getTxn();
-
     setShowModal(false);
     setCategory("Income");
     setIncomeType("Salary");
@@ -65,10 +63,13 @@ function Accounts() {
           Add Transaction
         </span>
       </div>
-      <div id="accountInfo" className="flex flex-col gap-[2vh] bg-gray-400 rounded-md p-[2vh]">
+      <div
+        id="accountInfo"
+        className="flex flex-col gap-[2vh] bg-white border-2 border-blue-400 rounded-md p-[2vh]"
+      >
         {Object.entries(groupedTrnArray).map(([date, transactions]) => {
           let total = 0;
-          transactions.forEach(trn => {
+          transactions.forEach((trn) => {
             if (trn.category === "Income") {
               total += Number(trn.amount);
             } else {
@@ -81,21 +82,28 @@ function Accounts() {
           return (
             <div key={date} className="mb-4">
               <p className="flex flex-row justify-between items-center text-xl font-bold text-white mb-2">
-                <span className="text-white/80">{dateHead}</span>
-                <span className={total >= 0 ? "text-green-300" : "text-red-300"}>
-                  {total >= 0 ? "+" : ""}
-                  {Number(total).toFixed(2).toLocaleString()} NGN
+                <span className="text-blue-500">{dateHead}</span>
+                <span
+                  className={total >= 0 ? "text-green-400" : "text-red-400"}
+                >
+                  {Number(total).toFixed(2).toLocaleString()}₦
                 </span>
               </p>
               {transactions.map((trn, idx) => (
                 <p
                   key={idx}
-                  className="flex flex-row justify-between items-center text-lg text-white/90 pl-4"
+                  className="flex flex-row justify-between items-center text-lg text-blue-400 pl-4"
                 >
                   <span>{trn.type}</span>
-                  <span className={trn.category === "Income" ? "text-green-200" : "text-red-200"}>
+                  <span
+                    className={
+                      trn.category === "Income"
+                        ? "text-green-400"
+                        : "text-red-400"
+                    }
+                  >
                     {trn.category === "Income" ? "+" : "-"}
-                    {Number(trn.amount).toFixed(2).toLocaleString()} NGN
+                    {Number(trn.amount).toFixed(2).toLocaleString()}₦
                   </span>
                 </p>
               ))}

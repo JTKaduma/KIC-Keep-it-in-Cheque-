@@ -1,12 +1,13 @@
-import { useState   } from "react"
+import { useState } from "react";
 
-function DashboardCard(props){
-  const [amt, setAmt] = useState(0)
-    return(
-        <div className="bg-white border-none rounded-sm shadow-lg w-50 px-[1vw] py-[1vh]">
-          <span className="text-xl">{props.name}</span>
-          <p className="text-emerald-500 text-2xl"><span id="total-balance">{amt}</span><span>NGN</span></p>
-        </div>
-    )
+function DashboardCard(props) {
+  return (
+    <div className="bg-blue-100 border-1 border-blue-400 rounded-md w-70 h-20 px-[1vw] py-[1vh]">
+      <span className="text-xl">{props.name}</span>
+      <p className="text-emerald-500 text-2xl">
+        <span>₦{props.amt}</span>
+      </p>
+    </div>
+  );
 }
-export default DashboardCard
+export default DashboardCard;
