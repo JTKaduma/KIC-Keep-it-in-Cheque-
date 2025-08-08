@@ -12,7 +12,6 @@ function MainPage(props) {
             {props.activeTab === "Dashboard" && <Dashboard />}
             {props.activeTab === "Accounts" && <Accounts />}
             {props.activeTab === "Budgets" && <Budgets />}
-
           </div>
         </div>
       </main>

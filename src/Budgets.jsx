@@ -79,14 +79,17 @@ function Budgets() {
         }
         if (endDate) {
           return (
-            (category === "All Categories" && t.category === "Expenses" ? true : t.type === category) &&
+            (category === "All Categories" && t.category === "Expenses"
+              ? true
+              : t.type === category) &&
             txnDate >= startDate &&
             txnDate <= endDate
           );
         } else {
           return (
-            (category === "All Categories" && t.category === "Expenses" ? true : t.type === category) &&
-            txnDate >= startDate
+            (category === "All Categories" && t.category === "Expenses"
+              ? true
+              : t.type === category) && txnDate >= startDate
           );
         }
       });

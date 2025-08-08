@@ -1,4 +1,4 @@
-function SidebarButton({ onTabClick, name, icon, }) {
+function SidebarButton({ onTabClick, name, icon }) {
   return (
     <>
       <button
